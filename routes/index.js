@@ -4,7 +4,7 @@ var fs = require("fs");
 var path = require("path");
 //const indexJs = path.basename(__filename);
 let reportList = [];
-fs.readdirSync(path.join(__dirname, "../../script"))
+fs.readdirSync(path.join(__dirname, "../../scripts"))
   .filter(file => file.indexOf(".") !== 0 && file.slice(-5) === ".html")
   .forEach((fileName, i) => {
     reportList[i] = fileName;
