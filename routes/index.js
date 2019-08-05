@@ -4,16 +4,15 @@ var fs = require("fs");
 var path = require("path");
 //const indexJs = path.basename(__filename);
 let reportList = [];
-fs.readdirSync(path.join(__dirname, "../../scripts"))
-  .filter(file => file.indexOf(".") !== 0 && file.slice(-5) === ".html")
-  .forEach((fileName, i) => {
-    reportList[i] = fileName;
-    console.log(fileName, i);
-  });
-console.log(reportList);
 
 /* GET home page. */
 router.get("/", function(req, res, next) {
+  fs.readdirSync(path.join(__dirname, "../../scripts"))
+    .filter(file => file.indexOf(".") !== 0 && file.slice(-5) === ".html")
+    .forEach((fileName, i) => {
+      reportList[i] = fileName;
+      console.log(fileName, i);
+    });
   res.render("index", { reportList });
 });
 
