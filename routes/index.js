@@ -7,6 +7,7 @@ let reportList = [];
 
 /* GET home page. */
 router.get("/", function(req, res, next) {
+  console.log("route /");
   fs.readdirSync(path.join(__dirname, "../../scripts"))
     .filter(file => file.indexOf(".") !== 0 && file.slice(-5) === ".html")
     .forEach((fileName, i) => {
