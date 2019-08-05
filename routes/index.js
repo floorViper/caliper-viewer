@@ -3,10 +3,10 @@ var router = express.Router();
 var fs = require("fs");
 var path = require("path");
 //const indexJs = path.basename(__filename);
-let reportList = [];
 
 /* GET home page. */
 router.get("/", function(req, res, next) {
+  let reportList = [];
   console.log("route /");
   fs.readdirSync(path.join(__dirname, "../../scripts"))
     .filter(file => file.indexOf(".") !== 0 && file.slice(-5) === ".html")
